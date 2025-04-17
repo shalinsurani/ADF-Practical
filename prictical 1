@@ -1,0 +1,12 @@
+//Practical 1: Android Studio setup for Flutter development with along with Dart SDK.
+Step 
+1: Go to Android from https://developer.android.com/studio and download Android studio. And also install it.
+ 2: Install Flutter and Dart plugins.
+Step
+3: Download Flutter SDK from https://docs.flutter.dev/get-started/install/windows/mobile
+Step 4: Extract SDK zip file. create a new folder named src in C drive. Paste flutter folder from extracted SDK file to src folder.
+ 5: Set environment variables. Follow below steps.
+1.	Click on Environment variable button.
+2.	Click on path and press edit button then Click on new and paste Flutter SDK path
+ Step
+ 3.	Do same for System variables too.

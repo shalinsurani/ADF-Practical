@@ -1,0 +1,36 @@
+import "package:flutter/material.dart";
+class ListGrid extends StatefulWidget {
+ const ListGrid({super.key});
+ @override
+ State<ListGrid> createState() => _ListGridState();
+}
+class _ListGridState extends State<ListGrid> {
+ List<String>Fruits = ['Orange','banana','apple','grapes'];
+ Map fruit_person = {
+ 'fruits': ['Orange','banana','apple','grapes'],
+ 'name': [Shalin,'Shalin 1l','Shalin 2','Shalin 3']
+ };
+ @override
+ Widget build(BuildContext context) {
+ return Scaffold(
+ appBar: AppBar(
+ title: Text("The List and Grid views"),
+ backgroundColor: Colors.blueGrey,
+ elevation: 10,
+ ),
+ body: Container(
+child: ListView.builder(
+itemCount: fruit_person['name'].length,
+itemBuilder: (context,index){
+ return Card(
+ //child: Text(Fruits[index]), this is for List<String>
+ // this is using map
+ child: ListTile(
+ onTap: () {
+ print(fruit_person['fruits'][index]);
+ print(fruit_person['name'][index]);
+ },
+ leading: Icon(Icons.person),
+ title: Text(fruit_person['fruits'][index]),
+ subtitle: Text(fruit_person['name'][index]),
+ ),);},),));}}

@@ -1,0 +1,27 @@
+//Practical 2: Create a “Hello Flutter” application.
+Step 1: Create a new Flutter Project. Select Flutter SDK path.
+
+Step 2: Select appropriate fields.
+
+ 
+Code:
+import 'package:flutter/material.dart';
+
+void main ()
+{
+runApp(Myapp());
+}
+
+class Myapp extends StatelessWidget { const Myapp({super.key});
+
+@override
+Widget build(BuildContext context) { return MaterialApp(
+home: Scaffold( body: Container(
+padding: EdgeInsets.all(50), child: Text('Hello Flutter : ', style: TextStyle(
+fontSize: 50,
+fontWeight: FontWeight.w600,
+),),
+),
+),
+);
+} }

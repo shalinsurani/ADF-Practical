@@ -1,0 +1,94 @@
+//Practical 5: Create an application using Flutter Key Widgets. Code :
+import 'package:flutter/material.dart';
+
+class Practical5 extends StatefulWidget { const Practical5({super.key}); @override
+State<Practical5> createState() => _Practical5State();
+}
+class _Practical5State extends State<Practical5> { String firstName = '';
+String lastName = ''; String email = '';
+String password = '';
+final form_key = GlobalKey<FormState>();
+/*	Functions	*/ trysubmit()
+{
+final isValid = form_key.currentState!.validate();	if(isValid)
+{
+form_key.currentState!.save();	submitform();
+}
+else
+{
+print("Error : ");
+}
+}
+submitform()
+{
+print(firstName);	print(lastName);	print(email); print(password);
+}
+
+@override
+Widget build(BuildContext context) { return Scaffold(	appBar: AppBar(
+ 
+title: Text("Shalin Surani 92311703003"), body: Center(
+child: Container(decoration: BoxDecoration(
+
+border: Border.all(width: 2)
+),
+margin: EdgeInsets.all(25), padding: EdgeInsets.all(15), child: Form(
+key: form_key, child: Column(
+children: <Widget>[ TextFormField(
+decoration: InputDecoration( hintText: "Enter First-Name ",
+),
+key: ValueKey('firstName'), validator: (value) {
+if(value.toString().isEmpty)
+{ return "FirstName can not be Empty"; } else
+{ return null; }
+},
+onSaved: (value){
+firstName = value.toString();
+},
+),
+TextFormField(
+decoration: InputDecoration( hintText: "Enter Last-Name ",
+),
+key: ValueKey('lastName'), validator: (value) {
+if(value.toString().isEmpty)
+{return "lastName can not be Empty"; } else
+{ return null; }
+},
+onSaved: (value){
+lastName = value.toString();
+},
+),
+ 
+
+TextFormField(
+decoration: InputDecoration( hintText: "Enter Email ",
+),
+key: ValueKey('email'), validator: (value) {
+if(value.toString().isEmpty)
+{ return "email can not be Empty";} else
+{ return null;}
+},
+onSaved: (value){
+email = value.toString();
+},
+),
+TextFormField( obscureText: true,
+decoration: InputDecoration( hintText: "Enter Password ",
+),
+key: ValueKey('password'), validator: (value) {
+if(value.toString().length<5 || value.toString().isEmpty)
+{ return "password can not be Empty or minimum 6 character long";} else
+{return null;}
+},
+onSaved: (value){
+password = value.toString();
+},
+),
+SizedBox(height: 30), ElevatedButton(
+style: ButtonStyle(
+backgroundColor: MaterialStatePropertyAll(Colors.greenAccent)
+),
+onPressed: (){ trysubmit();
+},
+child: Text("Submit : ")),
+],)	),),),);}}

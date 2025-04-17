@@ -1,0 +1,41 @@
+//Practical 7: Create an application using Navigation in flutter. Code :
+import 'package:fluteer1/Widgets/Alert.dart'; import 'package:fluteer1/Widgets/buttons.dart'; import 'package:fluteer1/Widgets/drawer.dart';
+import 'package:fluteer1/Widgets/imageWidget.dart'; import 'package:fluteer1/Widgets/snackbar.dart'; import 'package:flutter/material.dart';
+
+class Bottom_nav_Widget extends StatefulWidget { const Bottom_nav_Widget({super.key});
+
+@override
+State<Bottom_nav_Widget> createState() => _Bottom_nav_WidgetState();
+}
+
+class _Bottom_nav_WidgetState extends State<Bottom_nav_Widget> { int selectedIndex = 0;
+PageController newPageController = PageController(); void onTapp(int index)
+{
+setState(() {
+selectedIndex = index;
+});
+newPageController.jumpToPage(index);
+}
+@override
+Widget build(BuildContext context) { return Scaffold( body:
+PageView(
+controller: newPageController,	children: [
+Image_Widget(),
+Snackbar_Widget(),	buttons(), Drawer_Widget()
+],
+),
+bottomNavigationBar: BottomNavigationBar( items: <BottomNavigationBarItem>[
+BottomNavigationBarItem(	icon:
+Icon(Icons.home_filled),	label: "Home"
+ 
+
+),
+BottomNavigationBarItem( icon: Icon(Icons.search), label: "Search"
+),
+BottomNavigationBarItem( icon: Icon(Icons.add),
+label: "Add"
+),
+BottomNavigationBarItem(		icon: Icon(Icons.person_2),	label:
+"Profile"),],	currentIndex:
+selectedIndex,	selectedItemColor: Colors.greenAccent,
+unselectedItemColor: Colors.blueGrey, backgroundColor: Colors.black87, onTap: onTapp,),);}}

@@ -1,0 +1,38 @@
+//Practical 9: Create and application using GridView. Code :
+import "package:flutter/material.dart";
+
+class ListGrid extends StatefulWidget { const ListGrid({super.key});
+
+@override
+State<ListGrid> createState() => _ListGridState();
+}
+
+class _ListGridState extends State<ListGrid> { List<String>Fruits = ['Orange','banana','apple','grapes']; Map fruit_person = {
+'fruits': ['Orange','banana','apple','grapes'],
+'name': ['Shalin 1','Shalin 2','Shalin 3','Shalin 4']
+};
+@override
+Widget build(BuildContext context) { return Scaffold(	appBar: AppBar(
+title: Text("The List and Grid views"), backgroundColor: Colors.blueGrey,
+elevation: 10,
+),
+body: Container( child: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,crossAxisSpacing: 20,mainAxisSpacing: 20,childAspectRatio: 2/3),
+
+children: <Widget>[ Card(color: Colors.blue,
+child: Center(child: Text("Shalin 1")),
+),Card(color: Colors.green,
+child: Center(child: Text("Shalin 2")),
+),Card(
+child: Center(child: Text("Shalin 3")),
+),Card(
+child: Center(child: Text("Shalin 4")),
+),Card(
+child: Center(child: Text("Shalin 5")),
+),Card(
+
+child: Center(child: Text("Shalin 6")),
+ 
+),
+], ),
+));
+} }

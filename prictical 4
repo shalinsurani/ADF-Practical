@@ -1,0 +1,49 @@
+//Practical 4: Create an application using Flutter Key Widgets. Code :
+import 'package:flutter/material.dart';
+import'package:flutter_practical/Widgets/Practical_5.dart'
+; void main() { runApp(MyApp()); } class MyApp extends StatelessWidget { const MyApp({super.key});
+
+@override
+Widget build(BuildContext context) { return MaterialApp(
+
+home: Scaffold(	appBar: AppBar(
+title: Text("Shalin Surani 92311703003"), backgroundColor: Colors.blueGrey,
+),
+body: Container(	margin:
+EdgeInsets.all(15),	decoration:
+BoxDecoration(	borderRadius:
+BorderRadius.circular(30),
+border: Border.all(color: Colors.blueGrey,width: 5.0,)
+),
+child: Column(
+mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+RichText(text: TextSpan( text: "Hello ME!",
+style: TextStyle( fontSize: 40,
+color: Colors.blueGrey,
+fontWeight: FontWeight.bold
+)
+)),
+Row(
+mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
+Container(
+color: Colors.pinkAccent, height: 100,
+width: 100,
+ 
+
+child: Text("Column"),
+alignment: Alignment.center,), Container(
+color: Colors.greenAccent, height: 100,
+width: 100,
+child: Text("Column"),
+alignment: Alignment.center,), Container(
+color: Colors.cyanAccent, height: 100,
+width: 100,
+child: Text("Column"),
+alignment: Alignment.center,
+),],),
+Container(
+color: Colors.blue, height: 100,
+width: 100,
+child: Icon(Icons.add,color: Colors.white,size: 40,),
+) ], ), ), ), ); } }
+

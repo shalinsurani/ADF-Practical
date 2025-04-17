@@ -1,0 +1,29 @@
+
+//Practical 3: Create and application using Flutter Key Widgets. Code:
+import 'package:flutter/material.dart';
+
+void main ()
+{
+runApp(Myapp());
+}
+
+class Myapp extends StatelessWidget { const Myapp({super.key});
+
+@override
+Widget build(BuildContext context) { return MaterialApp(
+home: Scaffold( appBar: AppBar(
+title: Text( "Practical_2", style: TextStyle(
+fontSize: 30,
+fontWeight: FontWeight.bold, color: Colors.red,
+),),
+),
+body: Container(
+padding: EdgeInsets.all(50),
+child: Text('Hello Flutter : \n Shalin Surani \n92311703003', style: TextStyle(
+fontSize: 50,
+fontWeight: FontWeight.w600, color: Colors.blue,
+),),
+),
+),
+);
+} }
